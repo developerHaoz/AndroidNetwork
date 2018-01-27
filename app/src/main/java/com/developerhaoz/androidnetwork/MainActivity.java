@@ -1,67 +1,57 @@
 package com.developerhaoz.androidnetwork;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.Button;
-import android.widget.TextView;
-
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button mBtnTest;
-    private TextView mTvShowInfo;
+    private Handler mHandler = new Handler(){
 
-    private static final String URL = "https://www.baidu.com";
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final RequestQueue requestQueue = Volley.newRequestQueue(this);
-
-        mTvShowInfo = (TextView) findViewById(R.id.main_tv_show_info);
-
-        StringRequest stringRequest = new StringRequest(URL, new Response.Listener<String>() {
+        // ① 匿名线程持有 Activity 的引用，进行耗时操作
+        new Thread(new Runnable() {
             @Override
-            public void onResponse(String response) {
-                mTvShowInfo.setText(response);
+            public void run() {
+                try {
+                    Thread.sleep(5000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                mTvShowInfo.setText("it doesn't work");
-            }
-        });
-        requestQueue.add(stringRequest);
+        }).start();
+
+        // ② 使用匿名 Handler 发送耗时消息
+        Message message = Message.obtain();
+        mHandler.sendMessageDelayed(message, 6000);
     }
 
-    public class Test{
-        int a1 = 0;
-        Test mTest1 = new Test();
-
-        public void fun(){
-            int a2 = 0;
-            Test test2 = new Test();
+    static class MyAscnyTask extends AsyncTask<Void, Integer, String>{
+        @Override
+        protected String doInBackground(Void... params) {
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            return "";
         }
     }
 
-    Test mTest3 = new Test();
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mHandler.removeCallbacksAndMessages(null);
+    }
 }

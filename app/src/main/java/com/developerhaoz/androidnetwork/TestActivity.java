@@ -2,7 +2,6 @@ package com.developerhaoz.androidnetwork;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 
 public class TestActivity extends AppCompatActivity {
 
@@ -13,7 +12,6 @@ public class TestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
         int capacity = (int)(Runtime.getRuntime().totalMemory() / 1024);
-        Log.d(TAG, "onCreate: " + capacity / 8);
-
     }
+
 }

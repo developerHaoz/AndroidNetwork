@@ -40,6 +40,10 @@ public class NetworkResponse {
         this(HttpURLConnection.HTTP_OK, data, false, 0, Collections.<Header>emptyList());
     }
 
+    public NetworkResponse(byte[] data, Map<String, String> headers) {
+        this(HttpURLConnection.HTTP_OK, data, headers, false, 0);
+    }
+
     public NetworkResponse(int statusCode, byte[] data, boolean notModified, long networkTimeMs,
                            List<Header> allHeaders){
         this(statusCode, data,toHeaderMap(allHeaders), allHeaders, notModified, networkTimeMs);

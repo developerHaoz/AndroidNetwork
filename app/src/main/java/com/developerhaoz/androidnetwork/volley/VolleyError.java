@@ -9,30 +9,30 @@ package com.developerhaoz.androidnetwork.volley;
 public class VolleyError extends Exception {
 
     // TODO：NetworkResponse 类还没写，等写完再补充完整这个类
-    public final int networkResponse;
+    public final NetworkResponse networkResponse;
     private long networkTimeMs;
 
     public VolleyError(){
-        networkResponse = 0;
+        networkResponse = null;
     }
 
-    public VolleyError(int response){
+    public VolleyError(NetworkResponse response){
         networkResponse = response;
     }
 
     public VolleyError(String exceptionMessage){
         super(exceptionMessage);
-        networkResponse = 0;
+        networkResponse = null;
     }
 
     public VolleyError(String exceptionMessage, Throwable reason){
         super(exceptionMessage, reason);
-        networkResponse = 0;
+        networkResponse = null;
     }
 
     public VolleyError(Throwable cause){
         super(cause);
-        networkResponse = 0;
+        networkResponse = null;
     }
 
     public void setNetworkTimeMs(long networkTimeMs) {

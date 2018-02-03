@@ -26,7 +26,7 @@ public abstract class Request<T> implements Comparable<Request<T>> {
         int PUT = 2;
         int DELETE = 3;
         int HEAD = 4;
-        int OPTION = 5;
+        int OPTIONS = 5;
         int TRACE = 6;
         int PATCH = 7;
     }

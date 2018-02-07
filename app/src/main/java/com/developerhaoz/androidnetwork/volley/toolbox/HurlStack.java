@@ -21,7 +21,6 @@ public class HurlStack extends BaseHttpStack {
     private static final int HTTP_CONTINUE = 100;
 
     public interface UrlRewriter {
-
         String rewriteUrl(String originalUrl);
     }
 

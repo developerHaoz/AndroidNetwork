@@ -36,6 +36,5 @@ public class MeiziBean {
     }
 
     public MeiziBean(){
-
     }
 }

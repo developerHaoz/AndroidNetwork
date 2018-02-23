@@ -11,7 +11,6 @@ public class TestClass {
         private V v;
 
         public void add(K k, V v){
-
         }
     }
 }

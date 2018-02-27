@@ -24,11 +24,9 @@ public class MvpPresenter implements BasePresenter<MvpView> {
     }
 
     public void startLoadMeizi(){
-
     }
 
     @Override
     public void detachView() {
-
     }
 }

@@ -4,12 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 
-import java.util.Stack;
-
 
 public class TestActivity extends AppCompatActivity {
-
-    Stack mStack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -2,7 +2,6 @@ package com.developerhaoz.androidnetwork;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.MotionEvent;
 
 
 public class TestActivity extends AppCompatActivity {
@@ -18,8 +17,4 @@ public class TestActivity extends AppCompatActivity {
         super.onPostResume();
     }
 
-    @Override
-    public boolean dispatchTouchEvent(MotionEvent ev) {
-        return super.dispatchTouchEvent(ev);
-    }
 }

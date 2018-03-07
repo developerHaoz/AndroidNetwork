@@ -17,6 +17,8 @@
         <activity android:name=".TestActivity">
         </activity>
         <activity android:name=".mvptest.MvpActivity">
+        </activity>
+        <activity android:name=".okhttptest.OkhttpActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

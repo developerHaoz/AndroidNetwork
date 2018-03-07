@@ -6,8 +6,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 
-import com.developerhaoz.androidnetwork.volley.Header;
-
 public class MainActivity extends AppCompatActivity {
 
     private Handler mHandler = new Handler(){
@@ -22,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Header header;
         // ① 匿名线程持有 Activity 的引用，进行耗时操作
         new Thread(new Runnable() {
             @Override

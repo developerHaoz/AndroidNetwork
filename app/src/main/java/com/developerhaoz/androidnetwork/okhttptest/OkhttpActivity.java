@@ -30,11 +30,20 @@ public class OkhttpActivity extends AppCompatActivity {
         final Request request = new Request.Builder()
                 .url(URL)
                 .build();
-
         new Thread(new Runnable() {
             @Override
             public void run() {
+                mOkHttpClient.newCall(request).enqueue(new Callback() {
+                    @Override
+                    public void onFailure(Call call, IOException e) {
 
+                    }
+
+                    @Override
+                    public void onResponse(Call call, Response response) throws IOException {
+
+                    }
+                });
                 RequestBody requestBody = new RequestBody() {
                     @Nullable
                     @Override
@@ -54,7 +63,6 @@ public class OkhttpActivity extends AppCompatActivity {
 
                     @Override
                     public void onResponse(Call call, Response response) throws IOException {
-
                     }
                 });
             }

@@ -12,9 +12,4 @@ public class TestActivity extends AppCompatActivity {
         setContentView(R.layout.activity_test);
     }
 
-    @Override
-    protected void onPostResume() {
-        super.onPostResume();
-    }
-
 }

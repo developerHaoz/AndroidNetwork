@@ -12,4 +12,8 @@ public class TestActivity extends AppCompatActivity {
         setContentView(R.layout.activity_test);
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 }

@@ -3,6 +3,7 @@
           package="com.developerhaoz.androidnetwork">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
 
     <application
         android:name=".MyApplication"
@@ -19,6 +20,8 @@
         <activity android:name=".mvptest.MvpActivity">
         </activity>
         <activity android:name=".okhttptest.OkhttpActivity">
+        </activity>
+        <activity android:name=".windowtest.WindowActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

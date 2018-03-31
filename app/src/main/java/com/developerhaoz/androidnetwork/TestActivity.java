@@ -3,16 +3,29 @@ package com.developerhaoz.androidnetwork;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+
+import java.util.Scanner;
 
 
 public class TestActivity extends AppCompatActivity {
 
     private static final String TAG = "TestActivity";
+    private Button mBtnTest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
+        mBtnTest = new Button(this);
+        Scanner scanner = new Scanner(System.in);
+        mBtnTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
         Log.d(TAG, "onCreate: ");
     }
 
